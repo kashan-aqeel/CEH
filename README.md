@@ -41,7 +41,7 @@ As a professional ethical hacker or pen tester, you should be able to extract a 
 Domains and sub-domains are part of critical network infrastructure for any organization. A company's top-level domains (TLDs) and subdomains can provide much useful information such as organizational history, services and products, and contact information.
 
 #Footprinting through DNS Dumpster:
-1 Open a new tab in Firefox browser and go to https://dnsdumpster.com/. Search for certifiedhacker.com in the search box.
+1 Open a new tab in Firefox browser and go to [DNS Dumpster](https://dnsdumpster.com/). Search for certifiedhacker.com in the search box.
 2.Further, scroll down to view the domain mapping of the website. Click on Download .xlsx of Hosts button to download the list of hosts.
 3.The website displays the GEOIP of Host Locations. Scroll down to view the list of DNS Servers, MX Records, Host Record (A) along with their IP addresses.
 
