@@ -100,7 +100,30 @@ Nmap can adapt to network conditions including latency and congestion during a s
   3) FIN SCAN : it is one of the port scanning methiods in Nmap, which uses the sheer stupidity of old ans stateless firewalls. When it comes to FIN scan, pur port scanner software sends a packet with a flag in the form of FIN meaning the end of the session to the destination firewall or host. if no response is recieved, it means that the port is open, and if it returns RST//ACK, it means that the server port is closed.
   (nmap -sF 192.2..2..2)
 
-kashan ahmed <sup>'' kashan ahmed ''</sup>
+* scan the subnet
+
+code:
+sx arp 192.168.0.1/24
+
+> Let's assume that the actual ARP cache is in the arp.cache file. We can create it manually or use ARP scan as shown below:
+
+code:
+sx arp 192.168.0.1/24 --json | tee arp.cache
+
+> Once we have the ARP cache file, we can run scans of higher-level protocols like TCP SYN scan:
+
+code:
+
+cat arp.cache | sx tcp -p 1-65535 192.168.0.171
+
+> we can run udp scans as well.
+
+code:
+cat arp.cache | sx udp --json -p 53 192.168.0.171
+
+> if no response then port is opened, otherwise in case of error code port is closed
+
+
   
    
 
