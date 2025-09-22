@@ -80,14 +80,14 @@ Nmap can adapt to network conditions including latency and congestion during a s
   5) open/filtered: indicates that the port was filtered or open, but Nmap couldn't establish the state.
   6) closed/filter: indicates that Nmap is unable to determine whether a port is closed or filtered
 
-####### Tcp header: 
+###### Tcp header: 
  * TCP handshake: 
  <img width="1447" height="997" alt="image" src="https://github.com/user-attachments/assets/10aef6e2-1f6c-45a3-afea-1c75f14599fc" /> 
 * Connection termination:
   <img width="1355" height="963" alt="image" src="https://github.com/user-attachments/assets/a0b7696a-a023-4af9-9511-0ecce529aca9" />
 
 
-  ######## Scanning types:
+  ###### Scanning types:
    1) ping scan: is used to scan for the live hosts on the network. command: (nmap -sn 192.168.12.1/24)
   * Tcp connect scan: will scan for TCP ports and ensure for listening port(open) through 3-way handshake connection between the source and destination port. command: (namp -sT a92.000.)
   *  TCP Syn scan: this scan is often referred to as half-open scanning because you don't open a full TCP connecction. You send an SYN packet, as if you are going to open a real connection and then wait for a response. command: (nmap -sS   192....)
@@ -125,7 +125,7 @@ cat arp.cache | sx udp --json -p 53 192.168.0.171
   
 Explore Various Network Scanning Techniques using Nmap
 
-######### Explore Various Network Scanning Techniques using Nmap:
+####### Explore Various Network Scanning Techniques using Nmap:
 
 
 >  nmap -sT -v 192.168.18.110
@@ -184,7 +184,7 @@ SCTP COOKIE ECHO Scan: A COOKIE ECHO chunk is sent to the target host; no respon
 CODE:
  nmap -sZ -v [target IP address]
  
-########## HPING
+####### HPING
 
 * Ack scan no response means port is filtered. RST means closed
 
