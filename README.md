@@ -121,12 +121,119 @@ cat arp.cache | sx tcp -p 1-65535 192.168.0.171
 code:
 cat arp.cache | sx udp --json -p 53 192.168.0.171
 
-> if no response then port is opened, otherwise in case of error code port is closed
-
-
+> if no response then port is opened, otherwise in case of error code port is closed.
   
-   
+Explore Various Network Scanning Techniques using Nmap
 
+######### Explore Various Network Scanning Techniques using Nmap:
+
+
+>  nmap -sT -v 192.168.18.110
+*   -v  Verbose scan lists all hosts and ports in the  result
+
+* -sS stealth scan
+
+* -sU UDP scan
+
+* -sX xmass scan
+
+* > -sM Maimon scan (FIN/ACK)
+
+* > -sA Ack scan (no response it is filtered and RST means not filtered.
+
+* > -sN Null scan
+
+* > -T4 Aggressive
+
+* > -A all advanced and aggressive scan
+
+* > -sV Detects person
+
+* > -sC script scanning
+  
+  * Use Zenmap and get used to it.
+
+- Nmap scripts
+
+CODE:
+ls /usr/share/nmap/scripts/ssh*
+ls /usr/share/nmap/scripts/smb*
+
+<img width="728" height="731" alt="image" src="https://github.com/user-attachments/assets/56d4198a-0ab5-498c-b289-df1403dbe2fd" />
+
+s<img width="825" height="447" alt="image" src="https://github.com/user-attachments/assets/db78fe60-5410-46cc-95c4-5a96a8981215" />
+
+<img width="746" height="932" alt="image" src="https://github.com/user-attachments/assets/9fb4e859-4f93-49d4-a14d-0e5feba62ae9" />
+
+S<img width="733" height="958" alt="image" src="https://github.com/user-attachments/assets/856c793a-67df-4de8-9cd3-91a07ea95421" />
+
+<img width="650" height="830" alt="image" src="https://github.com/user-attachments/assets/1be9db35-e7fc-4921-8b93-692ea694c655" />
+
+
+- More scancs
+
+IDLE/IPID Header Scan: A TCP port scan method that can be used to send a spoofed source address to a computer to discover what services are available.
+CODE:
+ nmap -sI -v [target IP address]
+
+SCTP INIT Scan: An INIT chunk is sent to the target host; an INIT+ACK chunk response implies that the port is open, and an ABORT Chunk response means that the port is closed.
+CODE:
+ nmap -sY -v [target IP address]
+
+SCTP COOKIE ECHO Scan: A COOKIE ECHO chunk is sent to the target host; no response implies that the port is open and ABORT Chunk response means that the port is closed.
+CODE:
+ nmap -sZ -v [target IP address]
+ 
+########## HPING
+
+* Ack scan no response means port is filtered. RST means closed
+
+CODE:
+> hping3 -A -P 80 -C 5 192.168.18.110
+
+-c –count: packet count
+
+–faster: alias for -i u1000 (100 packets for second)
+
+–flood: sent packets as fast as possible. Don’t show replies.
+
+-V –verbose: verbose mode
+
+-0 –rawip: RAW IP mode
+
+-1  –icmp: ICMP mode
+
+-2 –udp: UDP mode
+
+-8 –scan: SCAN mode.
+
+-9 –listen: listen mode
+
+-a –spoof: spoof source address
+
+-C –icmptype: icmp type
+
+-K –icmpcode: icmp code
+
+-L –setack: set TCP ack
+
+-F –fin: set FIN flag
+
+-S  –syn: set SYN flag
+
+-R  –rst: set RST flag
+
+-A –ack: set ACK flag
+
+-X –xmas: set X unused flag (0x40)
+
+-Y –ymas: set Y unused flag (0x80)
+
+
+* Syn scan on a port.
+
+CoDE
+> hping3 -S 192.168.149.1 -p 80
   
 
    
