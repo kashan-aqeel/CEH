@@ -315,6 +315,21 @@ scan the ports
 Code:
 nmap -p 2049 192.168.18.110
 
+####### SuperEnum: 
+SuperEnum includes a script that performs a basic enumeration of any open port, including the NFS port (2049).
+
+RUn the script. it requires a list of IP addresses in a file.
+./superenum.py
+
+
+######## RPCscan
+RPCScan communicates with RPC (remote procedure call) services and checks misconfigurations on NFS shares. It lists RPC services, mountpoints,and directories accessible via NFS. It can also recursively list NFS shares.
+
+code:
+./rpcscan.py 192.168.18.110 --rpc
+
+
+
 
 
 
