@@ -307,7 +307,7 @@ Runs the smb-os-discovery NSE script against the target. That script queries Win
 - ldap search kali
 
 
-######## NFS ENUMERATION:
+###### NFS ENUMERATION:
 
 1. NFS enumeration with RPCscan and SuperEnum
 scan the ports
