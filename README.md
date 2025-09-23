@@ -184,7 +184,7 @@ CODE:
  nmap -sZ -v [target IP address]
 
  
-###  HPING
+##### HPING
 
 * Ack scan no response means port is filtered. RST means closed
 
@@ -267,10 +267,54 @@ Runs the smb-os-discovery NSE script against the target. That script queries Win
 
 
  
+ ## module 4:-  NMAP AND PYTHON FOR LDAP: 
  
+* Nmap scan LDAP:
+   > sudo nmap -sU -p 389(port) 192.168.18.110(ip)
+* brute forece LDAP:
+ > sudo nmap -p 389 --script ldap-brute --script-args ' "cn=users,dc=CEh,dc=com" ' 192.168.18.110
+> -p specifies the port. ldap-brute to brute  the LDAP and args if > set will be used as base to brute force( trying as many times to
+> authenticate until it authenticates.
+* now start pyhton3:
+> python3
+> import ldap3
 
- 
- 
+* now use the following commands:
+> server=ldap3.server('192.168.18.110', get_info-ldap3.ALL,port=389)
+> connection=ldap3.connection (server)
+> connection.bind()
+> server.info
+
+* Now use the following commands:
+> server=ldap3.server('192.168.18.100', get_info=ldap3.ALL,port=389)
+> connection.bind()
+> server.info
+
+* Now to get more information:
+
+>
+> connection.search(search_base='DC=CEH,DC=COM',search_filter='(&
+> (objectclass=*))',search_scope='SUBTREE',attributes='*') 
+>
+> connection.entries
+> 
+> connection.search(search_base='DC=CEH,DC=COM',search_filter='(&
+> (objectclass=person))',search_scope='SUBTREE',attributes='userpassword')
+ >
+> 
+> connection.entries
+
+- ldap search kali
+
+
+### NFS ENUMERATION:
+
+1. NFS enumeration with RPCscan and SuperEnum
+scan the ports
+
+Code:
+nmap -p 2049 192.168.18.110
+
 
 
 
