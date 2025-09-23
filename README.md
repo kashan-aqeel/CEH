@@ -160,11 +160,11 @@ ls /usr/share/nmap/scripts/smb*
 
 <img width="728" height="731" alt="image" src="https://github.com/user-attachments/assets/56d4198a-0ab5-498c-b289-df1403dbe2fd" />
 
-s<img width="825" height="447" alt="image" src="https://github.com/user-attachments/assets/db78fe60-5410-46cc-95c4-5a96a8981215" />
+<img width="825" height="447" alt="image" src="https://github.com/user-attachments/assets/db78fe60-5410-46cc-95c4-5a96a8981215" />
 
 <img width="746" height="932" alt="image" src="https://github.com/user-attachments/assets/9fb4e859-4f93-49d4-a14d-0e5feba62ae9" />
 
-S<img width="733" height="958" alt="image" src="https://github.com/user-attachments/assets/856c793a-67df-4de8-9cd3-91a07ea95421" />
+<img width="733" height="958" alt="image" src="https://github.com/user-attachments/assets/856c793a-67df-4de8-9cd3-91a07ea95421" />
 
 <img width="650" height="830" alt="image" src="https://github.com/user-attachments/assets/1be9db35-e7fc-4921-8b93-692ea694c655" />
 
@@ -307,7 +307,7 @@ Runs the smb-os-discovery NSE script against the target. That script queries Win
 - ldap search kali
 
 
-### NFS ENUMERATION:
+######## NFS ENUMERATION:
 
 1. NFS enumeration with RPCscan and SuperEnum
 scan the ports
